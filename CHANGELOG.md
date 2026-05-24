@@ -13,3 +13,5 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Query params: `theme` (dark/light/monokai), `limit` (1–10), `sort` (stars/forks/contributors), `license` (SPDX id / all).
 - Error states (missing/invalid username, 404, rate-limited, internal) return SVG with a readable message.
 - Edge cache: `s-maxage=3600, stale-while-revalidate=86400`.
+- README with usage, options, self-hosting, and local dev instructions.
+- Landing page (`/`) with live preview examples.
