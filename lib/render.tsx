@@ -9,8 +9,8 @@ const WIDTH = 495;
 async function loadFonts() {
   const dir = path.join(process.cwd(), "public", "fonts");
   const [regular, bold] = await Promise.all([
-    readFile(path.join(dir, "Inter-Regular.ttf")),
-    readFile(path.join(dir, "Inter-Bold.ttf")),
+    readFile(path.join(dir, "Inter_18pt-Regular.ttf")),
+    readFile(path.join(dir, "Inter_18pt-Bold.ttf")),
   ]);
   return [
     {
