@@ -4,8 +4,8 @@ export default function Home() {
       <h1>oss-card</h1>
       <p>Embeddable SVG card of GitHub upstream OSS contributions.</p>
       <p>
-        See{" "}
-        <a href="https://github.com/Educg550/oss-card">github.com/Educg550/oss-card</a> for usage.
+        See <a href="https://github.com/Educg550/oss-card">github.com/Educg550/oss-card</a> for
+        usage.
       </p>
     </main>
   );

@@ -3,7 +3,7 @@
   "vcs": { "enabled": true, "clientKind": "git", "useIgnoreFile": true },
   "files": {
     "ignoreUnknown": false,
-    "includes": ["**", "!**/.next", "!**/node_modules", "!**/docs/superpowers"]
+    "includes": ["**", "!**/.next", "!**/node_modules", "!**/docs/superpowers", "!tsconfig.json"]
   },
   "formatter": { "enabled": true, "indentStyle": "space", "indentWidth": 2, "lineWidth": 100 },
   "linter": { "enabled": true, "rules": { "recommended": true } },
