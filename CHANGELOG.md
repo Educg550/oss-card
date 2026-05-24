@@ -9,6 +9,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Fixed
 - Card renderer now uses the static `Inter_18pt` TTFs; the previous variable Inter font crashed satori on every `/api` request.
+- Repos whose license GitHub can't auto-detect (`spdx_id: NOASSERTION`) now render as `Custom License` instead of `NOASSERTION`.
 
 ## [0.1.0] - 2026-05-24
 

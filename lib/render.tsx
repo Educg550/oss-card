@@ -33,6 +33,12 @@ function formatStars(n: number): string {
   return String(n);
 }
 
+function formatLicense(license: string | null): string {
+  if (!license) return "—";
+  if (license === "noassertion") return "Custom License";
+  return license.toUpperCase();
+}
+
 function RepoRow({
   repo,
   maxStars,
@@ -58,7 +64,7 @@ function RepoRow({
       >
         <span style={{ color: accent, fontWeight: 700 }}>{repo.slug}</span>
         <span style={{ color: text }}>
-          ★ {formatStars(repo.stars)} {repo.license?.toUpperCase() ?? "—"}
+          ★ {formatStars(repo.stars)} {formatLicense(repo.license)}
         </span>
       </div>
       <div
