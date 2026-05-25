@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.2.0] - 2026-05-25
+
+### Added
+- Monokai theme: expanded to the full classic palette — star icon red (`#f92672`), star count green (`#a6e22e`), license purple (`#ae81ff`), progress bar green, language name orange (`#fd971f`).
+- All themes: 3px left accent border for a visual depth effect.
+
 ### Fixed
 - Card renderer now uses the static `Inter_18pt` TTFs; the previous variable Inter font crashed satori on every `/api` request.
 - Repos whose license GitHub can't auto-detect (`spdx_id: NOASSERTION`) now render as `Custom License` instead of `NOASSERTION`.
