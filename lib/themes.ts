@@ -6,6 +6,11 @@ export type ThemeTokens = {
   text: string;
   accent: string;
   bar: string;
+  star?: string;
+  starCount?: string;
+  license?: string;
+  barFill?: string;
+  lang?: string;
 };
 
 export const themes: Record<ThemeName, ThemeTokens> = {
@@ -29,5 +34,10 @@ export const themes: Record<ThemeName, ThemeTokens> = {
     text: "#75715e",
     accent: "#66d9e8",
     bar: "#49483e",
+    star: "#f92672",
+    starCount: "#a6e22e",
+    license: "#ae81ff",
+    barFill: "#a6e22e",
+    lang: "#fd971f",
   },
 };

@@ -42,15 +42,11 @@ function formatLicense(license: string | null): string {
 function RepoRow({
   repo,
   maxStars,
-  accent,
-  text,
-  bar,
+  t,
 }: {
   repo: RepoData;
   maxStars: number;
-  accent: string;
-  text: string;
-  bar: string;
+  t: import("./themes").ThemeTokens;
 }) {
   const fill = maxStars > 0 ? Math.max(0.05, repo.stars / maxStars) : 0;
   return (
@@ -62,16 +58,22 @@ function RepoRow({
           fontSize: 13,
         }}
       >
-        <span style={{ color: accent, fontWeight: 700 }}>{repo.slug}</span>
-        <span style={{ color: text }}>
-          ★ {formatStars(repo.stars)} {formatLicense(repo.license)}
+        <span style={{ color: t.accent, fontWeight: 700 }}>{repo.slug}</span>
+        <span style={{ display: "flex", gap: 4 }}>
+          <span style={{ color: t.star ?? t.text }}>★</span>
+          <span style={{ color: t.starCount ?? t.text }}>
+            {formatStars(repo.stars)}
+          </span>
+          <span style={{ color: t.license ?? t.text }}>
+            {formatLicense(repo.license)}
+          </span>
         </span>
       </div>
       <div
         style={{
           display: "flex",
           height: 4,
-          background: bar,
+          background: t.bar,
           borderRadius: 2,
           marginTop: 4,
         }}
@@ -79,7 +81,7 @@ function RepoRow({
         <div
           style={{
             width: `${fill * 100}%`,
-            background: accent,
+            background: t.barFill ?? t.accent,
             borderRadius: 2,
           }}
         />
@@ -89,11 +91,11 @@ function RepoRow({
           display: "flex",
           justifyContent: "space-between",
           fontSize: 11,
-          color: text,
+          color: t.text,
           marginTop: 4,
         }}
       >
-        <span>{repo.language ?? "—"}</span>
+        <span style={{ color: t.lang ?? t.text }}>{repo.language ?? "—"}</span>
         <span>
           👥 {formatStars(repo.contributors)} ↗ {repo.prCount}
         </span>
@@ -117,6 +119,8 @@ export async function renderCard(props: CardProps): Promise<string> {
         flexDirection: "column",
         background: t.background,
         padding: 20,
+        paddingLeft: 17,
+        borderLeft: `3px solid ${t.accent}`,
         fontFamily: "Inter",
         color: t.text,
       }}
@@ -146,9 +150,7 @@ export async function renderCard(props: CardProps): Promise<string> {
             key={r.slug}
             repo={r}
             maxStars={maxStars}
-            accent={t.accent}
-            text={t.text}
-            bar={t.bar}
+            t={t}
           />
         ))}
       </div>
